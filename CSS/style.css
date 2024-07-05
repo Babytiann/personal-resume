@@ -1,0 +1,145 @@
+:root{
+    /* Font */
+    --title-weight: 400px;
+    --title-large-size: 3.2rem;
+    --title-little-size:3rem;
+    --body-name-font-size:16px;
+    /* 总体布局 */
+    --all-border-radius: 12px;
+    --all-outline-color1: rgb(208 195 204);
+    --all-outline-color2: rgb(126 116 125);
+    /* 头部 */
+    --header-bg-color:#FFDAD5;
+    --header-bg-secondary-color:#FFF7FA;
+    /* 主体 */
+    --body-bg-color:#EDDEE9;
+    --body-font-color:rgb(77 68 76);
+}
+
+*, *:before, *:after{
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    line-height: 1.8;
+    
+}
+section *{
+    clear: both;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 960px;
+    padding: 2rem;
+    margin: auto;
+}
+a{ 
+    text-decoration: none;
+    outline: transparent;
+    color: black;
+    font-size: small;
+}                        /*最基础的设置，去掉链接的下划线，去掉链接的默认颜色，设置链接的字体大小*/
+header section{
+    display: flow-root;
+    margin-top: 50px;
+    background-color: var(--header-bg-color);
+    padding: 24px 16px 32px;
+    border-radius: var(--all-border-radius);
+    border:1px solid var(--all-outline-color1); ;
+}                              /*设置头部的样式*/
+.id{
+    font-weight: var(--title-large-weight);
+    font-size: var(--title-large-size);
+    padding: 16px;
+}                               /*设置头部的标题样式*/
+.header-div{
+    display: flex;
+    align-items: center;
+    padding:16px 16px 0;
+    gap: 16px;
+}                              /*设置头部的div样式，形成flex布局，让那几个图标依次排开*/
+.header-div div{
+    border: 1px solid var(--all-outline-color2);
+    background-color: var(--header-bg-secondary-color);
+    border-radius: var(--all-border-radius);
+    height: 32px;
+    padding: 5px 8px;
+}                             /*控制图标位置，以及每一块超链接的样式*/
+.header-div div img{
+    width: 18px;
+    height: auto;
+    object-fit: contain;
+}                            /*控制图标的大小*/
+.header-a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}                             /*控制内部样式，以免文字跟图标不平齐，下面的.up也是*/
+.up{
+    position:relative;
+    bottom: 2.3px;
+}
+@media screen and (max-width: 960px) {
+    .up {
+      display: none;             /*屏幕尺寸不足时对图标后的文字进行隐藏*/
+    }
+  }
+
+/*以上是简历开头部分的样式，下面是主体部分的样式*/
+
+.title-large{
+    color: black;
+    margin-bottom: 20px;
+    font-size: var(--title-little-size);
+    font-weight: var(--title-large-weight);
+    float: left;
+    padding: 16px;
+    color: var(--body-font-color); 
+}
+.card{
+    overflow: hidden;
+    color: var(--body-font-color);
+    background-color: var(--body-bg-color);
+    border-radius: var(--all-border-radius);
+    border: 1px solid var(--all-outline-color1);
+    padding: 24px;
+    line-height: 1.8;
+}
+.list-item-header{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logobox{
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;     /*设置头像的大小,并且防止了当视口特别小的时候图像消失*/
+}
+.logo{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: contain;  /*设置头像的样式,与上面一样都是模板*/
+}
+.name-time{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    font-size: var(--body-name-font-size);
+    gap: 1px;           /*介绍这个logo的公司名字以及时间*/
+}
+
+main section{
+    margin-top: 50px;
+}
+.title-s{
+    font-weight: var(--title-large-weight);
+    font-size: 1.25em;        /*每个card里面的主要内容的小标题*/
+} 
+ul{
+    list-style-type: circle;   /*每个card里面的主要的列表*/
+    padding-left: 20px;
+  }
+  
