@@ -18,7 +18,7 @@
 
 *, *:before, *:after{
     box-sizing: border-box;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word;  /*overflow-wrap 应用于行级元素，用来设置浏览器是否应该在一个本来不能断开的字符串中插入换行符，以防止文本溢出其行向盒。*/
     line-height: 1.8;
     
 }
@@ -41,7 +41,6 @@ a{
     font-size: small;
 }                        /*最基础的设置，去掉链接的下划线，去掉链接的默认颜色，设置链接的字体大小*/
 header section{
-    display: flow-root;
     margin-top: 50px;
     background-color: var(--header-bg-color);
     padding: 24px 16px 32px;
@@ -49,7 +48,7 @@ header section{
     border:1px solid var(--all-outline-color1); ;
 }                              /*设置头部的样式*/
 .id{
-    font-weight: var(--title-large-weight);
+    font-weight: var(--title-weight);
     font-size: var(--title-large-size);
     padding: 16px;
 }                               /*设置头部的标题样式*/
@@ -89,10 +88,9 @@ header section{
 /*以上是简历开头部分的样式，下面是主体部分的样式*/
 
 .title-large{
-    color: black;
     margin-bottom: 20px;
     font-size: var(--title-little-size);
-    font-weight: var(--title-large-weight);
+    font-weight: var(--title-weight);
     float: left;
     padding: 16px;
     color: var(--body-font-color); 
@@ -135,7 +133,7 @@ main section{
     margin-top: 50px;
 }
 .title-s{
-    font-weight: var(--title-large-weight);
+    font-weight: var(--title-weight);
     font-size: 1.25em;        /*每个card里面的主要内容的小标题*/
 } 
 ul{
