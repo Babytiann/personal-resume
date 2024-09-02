@@ -40,12 +40,28 @@ a{
     color: black;
     font-size: small;
 }                        /*最基础的设置，去掉链接的下划线，去掉链接的默认颜色，设置链接的字体大小*/
+.pre-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.print-icon, .switch-icon{
+    width: 30px;
+    height: auto;
+}
+.print-icon img, .switch-icon img{
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
 header section{
-    margin-top: 50px;
+    margin-top: 25px;
     background-color: var(--header-bg-color);
     padding: 24px 16px 32px;
     border-radius: var(--all-border-radius);
-    border:1px solid var(--all-outline-color1); ;
+    border:1px solid var(--all-outline-color1);
 }                              /*设置头部的样式*/
 .id{
     font-weight: var(--title-weight);
@@ -141,3 +157,21 @@ ul{
     padding-left: 20px;
   }
   
+
+  @page {
+    margin: 0;
+  }
+  
+  body {
+    margin: 1cm; /* 你可以调整这个值来确保页面内容不会紧贴页面边缘 */
+  }
+
+  .project,.tecnology{
+    page-break-inside: avoid;  /*避免在这两个类里面分页,让他们都出现在一张纸上*/
+  }
+
+  @media print{
+    .pre-head{
+        display: none;  /*打印时隐藏头部的图标*/
+    }
+  }
